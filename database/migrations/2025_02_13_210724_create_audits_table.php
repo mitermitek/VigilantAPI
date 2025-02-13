@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('client_id')->constrained();
             $table->foreignId('template_id')->constrained();
             $table->foreignId('location_id')->constrained();
-            $table->foreignId('auditor_id')->constrained('user_id');
+            $table->foreignId('auditor_id')->constrained('users');
             $table->foreignId('contact_id')->constrained();
             $table->dateTime('rdv');
             $table->boolean('is_done')->default(false);
