@@ -35,4 +35,9 @@ class Client extends Model
     {
         return $this->hasMany(Audit::class);
     }
+
+    public function criteria()
+    {
+        return $this->hasMany(Criterion::class);
+    }
 }
