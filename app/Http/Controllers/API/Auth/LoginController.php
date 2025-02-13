@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\API\Auth\LoginRequest;
 use App\Services\AuthenticationService;
 use App\DTOs\Auth\LoginDTO;
-use App\Http\Resources\API\Auth\UserTokenResource;
+use App\DTOs\Auth\UserLoggedInDTO;
 
 class LoginController extends Controller
 {
@@ -17,8 +17,6 @@ class LoginController extends Controller
         $loginDTO = LoginDTO::from($request->validated());
         $token = $this->authenticationService->login($loginDTO);
 
-        return new UserTokenResource([
-            'token' => $token
-        ]);
+        return new UserLoggedInDTO(token: $token);
     }
 }
