@@ -16,4 +16,9 @@ class Contact extends Model
     {
         return $this->belongsTo(Client::class);
     }
+
+    public function audits()
+    {
+        return $this->hasMany(Audit::class);
+    }
 }

@@ -30,4 +30,9 @@ class Client extends Model
     {
         return $this->hasMany(Contact::class);
     }
+
+    public function audits()
+    {
+        return $this->hasMany(Audit::class);
+    }
 }
