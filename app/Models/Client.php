@@ -45,4 +45,9 @@ class Client extends Model
     {
         return $this->hasMany(Choice::class);
     }
+
+    public function actions()
+    {
+        return $this->hasMany(Action::class);
+    }
 }
