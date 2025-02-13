@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('user_client', function (Blueprint $table) {
             $table->foreignId('user_id')->constrained();
             $table->foreignId('client_id')->constrained();
+            $table->primary(['user_id', 'client_id']);
         });
     }
 
