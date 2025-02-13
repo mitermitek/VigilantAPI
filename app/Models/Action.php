@@ -27,4 +27,9 @@ class Action extends Model
     {
         return $this->belongsToMany(Template::class, 'template_choice_action');
     }
+
+    public function answers()
+    {
+        return $this->hasMany(AnswerAction::class);
+    }
 }
