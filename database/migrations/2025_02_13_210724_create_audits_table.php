@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('audits', function (Blueprint $table) {
             $table->id();
             $table->foreignId('client_id')->constrained();
+            $table->foreignId('template_id')->constrained();
             $table->foreignId('location_id')->constrained();
             $table->foreignId('auditor_id')->constrained('user_id');
             $table->foreignId('contact_id')->constrained();

@@ -22,4 +22,9 @@ class Action extends Model
     {
         return $this->belongsTo(Client::class);
     }
+
+    public function templates()
+    {
+        return $this->belongsToMany(Template::class, 'template_choice_action');
+    }
 }
