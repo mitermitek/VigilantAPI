@@ -25,4 +25,9 @@ class Client extends Model
     {
         return $this->hasMany(Location::class);
     }
+
+    public function contacts()
+    {
+        return $this->hasMany(Contact::class);
+    }
 }
