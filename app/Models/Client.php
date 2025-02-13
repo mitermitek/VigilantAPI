@@ -15,4 +15,9 @@ class Client extends Model
     {
         return $this->belongsToMany(User::class);
     }
+
+    public function templates()
+    {
+        return $this->hasMany(Template::class);
+    }
 }
