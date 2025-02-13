@@ -27,4 +27,9 @@ class Criterion extends Model
         return $this->belongsToMany(Choice::class, 'template_criterion_choice', 'criterion_id', 'choice_id')
             ->wherePivot('template_id', $this->pivot->template_id);
     }
+
+    public function answers()
+    {
+        return $this->hasMany(Answer::class);
+    }
 }
